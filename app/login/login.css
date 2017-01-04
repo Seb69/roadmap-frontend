@@ -1,0 +1,17 @@
+body {
+  background: url('assets/images/login-bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: quicksand;
+  src: url("assets/fonts/quicksand/Quicksand-Light.otf") format("opentype");
+}
+
+.quicksandfont {
+  font-family: quicksand;
+}
+

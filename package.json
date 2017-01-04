@@ -1,0 +1,11 @@
+{
+  "name": "angular-roadmapp",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-nodemon": "^0.4.1",
+    "load-grunt-tasks": "^3.4.0",
+    "time-grunt": "^1.2.2"
+  },
+  "private": true
+}

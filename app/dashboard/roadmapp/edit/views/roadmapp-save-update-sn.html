@@ -1,0 +1,31 @@
+
+<div>
+  <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="roadmapp-save">
+    <md-toolbar class="md-small md-accent">
+      <h2 class="md-toolbar-tools">RoadMapp information</h2>
+    </md-toolbar>
+    <md-content layout-padding>
+      <form>
+        <md-input-container>
+          <label for="rmName">Name</label>
+          <input id="rmName" type="text" ng-model="roadmapp.title" md-autofocus>
+        </md-input-container>
+        <md-input-container>
+          <label for="rmDescription">Description</label>
+          <input id="rmDescription" type="text" ng-model="roadmapp.description" md-autofocus>
+        </md-input-container>
+      </form>
+    </md-content>
+    <md-content layout-padding>
+      <h4>Steps</h4>
+    <md-list>
+      <md-list-item ng-repeat="marker in markers">
+        <md-icon class="md-avatar-icon" md-icon="explore"></md-icon>
+        <span>{{marker.title}}</span>
+      </md-list-item>
+    </md-list>
+    </md-content>
+    <button class="mdl-button mdl-button--raised mdl-button--colored" ng-click="cancelSaveRoadMapp()">Cancel</button>
+    <button class="mdl-button mdl-button--raised mdl-button--accent" ng-click="confirmSaveRoadMapp()">Confirm and save</button>
+  </md-sidenav>
+</div>

@@ -1,0 +1,33 @@
+<div layout="row" layout-align="center">
+  <div flex style="max-width:500px;">
+    <md-card class="md-whiteframe-11dp">
+      <h1 align="center" class="quicksandfont">Roadmapp Sign In</h1>
+      <md-card-content>
+        <form layout="column">
+          <md-input-container>
+            <label>Email</label>
+            <input type="email" ng-model="user.email">
+          </md-input-container>
+          <md-input-container>
+            <label>Password</label>
+            <input type="password" ng-model="user.password">
+          </md-input-container>
+          <div layout="row" layout-align="center">
+            <md-button class="md-primary md-raised" ng-click="signin()">
+              Sign In
+            </md-button>
+            <md-button class="md-primary md-raised" ng-href="#/signup">
+              Sign Up
+            </md-button>
+          </div>
+        </form>
+        <md-divider style="margin:10px 10px"></md-divider>
+        <div layout="row" layout-align="center">
+          <md-button class="md-warn md-raised" ng-click="signinGoogle()">
+            Google+
+          </md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

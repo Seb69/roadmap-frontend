@@ -1,0 +1,54 @@
+<div ng-include="'../components/shell/shell.html'"></div>
+<div ng-include="'roadmapp/edit/views/roadmapp-save-update-sn.html'" ng-controller="RoadmappSaveUpdateCtrl"></div>
+<div ng-include="'roadmapp/edit/views/marker-save-sn.html'" ng-controller="markerSaveCtrl"></div>
+<div ng-include="'roadmapp/edit/views/marker-update-sn.html'" ng-controller="MarkerUpdateCtrl"></div>
+
+<leaflet class="map roadmapp" defaults="defaults" layers="layers" lf-center="center" event-broadcast="events" markers="markers" url-hash-center="yes" width="100%"></leaflet>
+<md-sidenav class="md-whiteframe-z2" md-component-id="" style="max-height:80%" md-is-locked-open="$mdMedia('gt-md')">
+  <h1 class="md-toolbar-tools">Your RoadMapp</h1>
+  <md-subheader class="md-primary">{{shared.currentMarkerIndex}} steps</md-subheader>
+  <div layout="column">
+
+    <md-content layout-padding ng-controller="RoadmappSaveUpdateCtrl">
+      <form name="rmForm">
+        <md-input-container class="md-block">
+          <label>Name</label>
+          <input type="text" name="rmName" ng-model="shared.roadmapp.title" md-autofocus required>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Description</label>
+          <input type="text" ng-model="shared.roadmapp.description">
+        </md-input-container>
+        <div class="custom-error" ng-show="rmForm.rmName.$dirty && rmForm.rmName.$invalid">
+          Invalid: <span ng-show="rmForm.rmName.$error.required">roadmapp title is required.</span>
+        </div>
+      </form>
+      <md-content flex layout="row" layout-align="space-around center">
+      <md-button class="md-primary md-raised" ng-click="saveRoadMapp()" ng-disabled="rmForm.rmName.$error.required">
+        save
+      </md-button>
+      <md-switch ng-show="shared.currentMarkerIndex > 1" ng-model="switch1" ng-change="displayInstructions(switch1)" aria-label="Switch 1">
+        <span>instructions</span>
+      </md-switch>
+    </md-content>
+    </md-content>
+
+    <md-divider ng-show="markers"></md-divider>
+
+    <!-- steps list -->
+    <md-content flex>
+      <section>
+        <md-list>
+          <md-list-item ng-click="editMarker(marker)" ng-repeat="marker in markers">
+              <div class="md-list-item-text">
+                <ng-md-icon class="icon-align-text" icon="place" style="fill:#3F51B5"></ng-md-icon>
+                {{marker.mIndex}} {{marker.title}}
+              </div>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
+      </section>
+    </md-content>
+
+  </div>
+</md-sidenav>

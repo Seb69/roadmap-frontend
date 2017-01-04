@@ -1,0 +1,54 @@
+<style>
+  .shell-icon-align-text {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 0.5;
+  }
+</style>
+
+<div ng-controller="ShellCtrl" class="main-shell">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-toolbar class="md-small md-accent">
+      <h2 class="md-toolbar-tools">Menu</h2>
+    </md-toolbar>
+    <md-content layout-padding>
+      <md-menu-content>
+        <md-menu-item>
+          <md-button ng-href="#/">
+            Home
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-href="#/roadmapps/list">
+            My Roadmapps
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="logout()">
+            Logout
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+      <md-menu-item>
+        <md-button class="md-primary" ng-href="#/roadmapps/new">
+          New Roadmapp
+        </md-button>
+      </md-menu-item>
+    </md-content>
+  </md-sidenav>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Settings">
+        <ng-md-icon icon="menu" style="fill:white"></ng-md-icon>
+      </md-button>
+      <h2>
+        <span>RoadMapp</span>
+      </h2>
+      <span flex></span>
+      <h3>
+        <ng-md-icon icon="account_circle" style="fill:white" size="30" class="shell-icon-align-text"></ng-md-icon>
+        <span>{{CURRENT_USER.username}}</span>
+      </h3>
+    </div>
+  </md-toolbar>
+</div>

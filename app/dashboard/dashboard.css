@@ -1,0 +1,45 @@
+/*hide default routing itinerary*/
+.leaflet-control-container
+.leaflet-routing-container-hide {
+  display: none;
+}
+
+/*display map height 100%*/
+.roadmapp {
+  height: 90.5% !important;
+  position: absolute !important;
+}
+
+/*set background*/
+body {
+  background: url('assets/images/dashboard-bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*align icon with text*/
+.icon-align-text {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1.5;
+}
+
+/*md color palette*/
+.md-red {
+  background-color: #F44336 !important;
+}
+.md-red:hover {
+  background-color: #D32F2F !important;
+}
+
+/* hide zoom control buttons */
+/*.leaflet-bar {
+  display: none !important;
+}*/
+
+/* error display in rm form */
+.custom-error {
+  color:#FF0000;
+}

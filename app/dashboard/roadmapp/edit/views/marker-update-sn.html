@@ -1,0 +1,22 @@
+<div>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-open="isSidenavOpen" md-component-id="marker-update">
+    <md-toolbar class="md-small md-accent">
+      <h2 class="md-toolbar-tools">Marker Information</h2>
+    </md-toolbar>
+    <md-content layout-padding>
+      <form>
+        <md-input-container class="md-block">
+          <label>Name</label>
+          <input type="text" ng-model="shared.currentMarker.title" md-autofocus>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Description</label>
+          <input type="text" ng-model="shared.currentMarker.description">
+        </md-input-container>
+      </form>
+      <md-button class="md-primary md-raised" ng-click="saveMarker()">Update</md-button>
+      <md-button class="md-raised" ng-click="cancelMarker()">Cancel</md-button>
+      <md-button class="md-warn md-raised" ng-click="showDialog()">Delete</md-button>
+    </md-content>
+  </md-sidenav>
+</div>

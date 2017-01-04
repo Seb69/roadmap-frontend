@@ -1,0 +1,41 @@
+<div ng-include="'../components/shell/shell.html'"></div>
+<div layout="row" layout-align="center" ng-init="onAllRoadMap()" >
+  <div flex style="max-width:800px">
+    <md-card>
+      <h2 align="center">Alls Roadmapps</h2>
+      <md-card-content>
+        <md-list>
+          <md-divider></md-divider>
+          <div ng-show="roadmapps === null || roadmapps === {}">Nothing found...</div>
+          <div ng-repeat="roadmapp in roadmapps">
+            <md-list-item class="md-2-line" ng-click="editRoadmapp(roadmapp.id)">
+              <div class="md-list-item-text" layout="row" layout-align="end">
+                <div layout="column" flex>
+                  <h3>{{ roadmapp.title }}</h3>
+                  <p>{{ roadmapp.description }}</p>
+                </div>
+                <md-button class="md-icon-button md-raised" ng-click="onDelete(roadmapp.id); $event.stopPropagation();">
+                  <ng-md-icon icon="clear"></ng-md-icon>
+                </md-button>
+              </div>
+              <md-divider></md-divider>
+            </md-list-item>
+          </div>
+          <md-list-item class="md-3-line"  ng-show="!roadmapps.length" >
+            <div  class="md-list-item-text"  layout="column" >
+              <h3 text-align="center" >No roadmapps found...</h3>
+            </div>
+            <md-divider></md-divider>
+          </md-list-item>
+        </md-list>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
+
+<!-- Button to create roadmapps -->
+<div layout="row">
+  <md-button class="md-red md-icon-button md-fab md-fab-bottom-right" ng-href="#/roadmapps/new">
+    <ng-md-icon icon="add" style="fill:white"></ng-md-icon>
+  </md-button>
+</div>
